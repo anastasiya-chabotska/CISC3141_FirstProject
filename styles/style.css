@@ -5,8 +5,12 @@ html, body{
 
 }
 
+
+
+
 html{
     background-image: linear-gradient( rgb(179, 204, 245, 0.5), rgb(255, 205, 155, 0.5));
+  
 }
 
 a{

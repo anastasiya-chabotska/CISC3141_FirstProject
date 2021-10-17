@@ -2,14 +2,44 @@
 <html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
-
+    <title>Anastasiya Chabotska</title>
+  
 </head>
 
-<body>
+<body onload="runTime()" id="body">
+    <script>
+
+        var timer;
+
+        function reduceOpacity()
+        {
+            var op = document.getElementById('body');
+            
+            //get the style value with getComputedStyle, which is an accurate representation of 
+            //all element styling on load.
+            var currentOp = getComputedStyle(op).getPropertyValue("opacity");
+         
+            // clear the interval if opacity is less than or equal to 0
+            if(currentOp >= 100) clearInterval(timer);
+            
+        
+            //currentOp = (parseFloat(currentOp) -  0.1).toString();
+            // currentOp = currentOp + 0.1;
+            currentOp = (parseFloat(currentOp) + 0.05).toString();
+            op.style.opacity = currentOp;
+           
+        }
+
+        function runTime() 
+        {
+            timer = setInterval(reduceOpacity, 100);
+        }
+
+    </script>
 
 
 
@@ -42,7 +72,7 @@
                 <td>
                     <a href="education.html">
                         <div class="menu-card">
-                            <img src="images/online-learning.png" height=100px>
+                            <img src="images/online-learning.png" height=100px alt="education icon">
                             <h3>Education</h3>
                         </div>
                     </a>
@@ -51,7 +81,7 @@
                 <td>
                     <a href="experience.html">
                         <div class="menu-card">
-                            <img src="images/experience.png" height=100px>
+                            <img src="images/experience.png" height=100px alt="experience icon">
                             <h3>Experience</h3>
                         </div>
                     </a>
@@ -62,7 +92,7 @@
 
                     <a href="projects.html">
                         <div class="menu-card">
-                            <img src="images/project-management.png" height=100px>
+                            <img src="images/project-management.png" height=100px alt="projects icon">
                             <h3>Projects</h3>
                         </div>
                     </a>
